@@ -3,7 +3,7 @@ import BodyComponent from "./Components/BodyComponent";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 
-MainComponent = () => {
+const MainComponent = () => {
     return(
         <div>
             <Header />

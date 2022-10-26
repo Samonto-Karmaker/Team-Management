@@ -1,6 +1,6 @@
 import React from "react";
 
-BodyComponent = () => {
+const BodyComponent = () => {
     return(
         <div>
 
