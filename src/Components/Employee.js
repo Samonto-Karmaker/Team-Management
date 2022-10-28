@@ -10,7 +10,7 @@ const Employee = () => {
 
     return(
         <div className="Container">
-            <div className="row">
+            <div className="row justify-content-center mt-3 md-3">
                 <div className="col-2">
                     {
                         employees.map((employee) => (
