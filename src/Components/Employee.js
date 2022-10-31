@@ -7,12 +7,25 @@ import "../App.css"
 
 const Employee = () => {
 
+    const [selectedTeam, setTeam] = useState("TeamA")
     const [employees, setEmployees] = useState(employee_data)
+
+    const handleSelectedTeamChange = event => {
+        setTeam(event.target.value)
+    }
 
     return(
         <div className="Container">
             <div className="row justify-content-center mt-3 md-3">
-                <div className="col-4">
+                <div className="col-6">
+                    <div>
+                        <select className="form-select form-select-lg" value={selectedTeam} onChange={handleSelectedTeamChange}>
+                            <option value="TeamA">Team A</option>
+                            <option value="TeamB">Team B</option>
+                            <option value="TeamC">Team C</option>
+                            <option value="TeamD">Team D</option>
+                        </select>
+                    </div>
                     <div className="collection">
                         {
                             employees.map((employee) => (
