@@ -2,3 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+.standout{
+    box-shadow: rgba(44, 11, 194, 0.6) 0px 1px 4px, rgb(53, 9, 247) 0px 0px 0px 3px; 
+}

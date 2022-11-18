@@ -14,6 +14,29 @@ const Employee = () => {
         setTeam(event.target.value)
     }
 
+    const handleEmployeeClick = event => {
+        const mEmployeeList = employees.map(
+            employee => {
+                if(employee.id === parseInt(event.currentTarget.id)){
+                    if(employee.teamName != selectedTeam){
+                        return{
+                            ...employee,
+                            teamName: selectedTeam
+                        }
+                    }
+                    else{
+                        return{
+                            ...employee,
+                            teamName: ""
+                        }
+                    }
+                }
+                return employee
+            }
+        )
+        setEmployees(mEmployeeList)
+    }
+
     return(
         <div className="Container">
             <div className="row justify-content-center mt-3 md-3">
@@ -29,7 +52,10 @@ const Employee = () => {
                     <div className="collection">
                         {
                             employees.map((employee) => (
-                                    <div id={employee.id} className="card m-2" style={{cursor: "pointer"}}>
+                                    <div id={employee.id} 
+                                        className={(employee.teamName === selectedTeam) ? "card m-2 standout" : "card m-2"} 
+                                        style={{cursor: "pointer"}} 
+                                        onClick = {handleEmployeeClick}>
                                         {
                                             (employee.gender === "male") ? 
                                                 <img src={maleProfile} className="card-img-top"/> : 
