@@ -1,48 +1,15 @@
 import React from "react";
-import { useState } from "react";
-import employee_data from "../Data/employeeData";
 import femaleProfile from "../Data/image/femaleProfile.jpg"
 import maleProfile from "../Data/image/maleProfile.jpg"
 import "../App.css"
 
-const Employee = () => {
-
-    const [selectedTeam, setTeam] = useState("TeamA")
-    const [employees, setEmployees] = useState(employee_data)
-
-    const handleSelectedTeamChange = event => {
-        setTeam(event.target.value)
-    }
-
-    const handleEmployeeClick = event => {
-        const mEmployeeList = employees.map(
-            employee => {
-                if(employee.id === parseInt(event.currentTarget.id)){
-                    if(employee.teamName != selectedTeam){
-                        return{
-                            ...employee,
-                            teamName: selectedTeam
-                        }
-                    }
-                    else{
-                        return{
-                            ...employee,
-                            teamName: ""
-                        }
-                    }
-                }
-                return employee
-            }
-        )
-        setEmployees(mEmployeeList)
-    }
-
+const Employee = props => {
     return(
         <div className="Container">
             <div className="row justify-content-center mt-3 md-3">
                 <div className="col-6">
                     <div>
-                        <select className="form-select form-select-lg" value={selectedTeam} onChange={handleSelectedTeamChange}>
+                        <select className="form-select form-select-lg" value={props.selectedTeam} onChange={props.handleSelectedTeamChange}>
                             <option value="TeamA">Team A</option>
                             <option value="TeamB">Team B</option>
                             <option value="TeamC">Team C</option>
@@ -51,11 +18,11 @@ const Employee = () => {
                     </div>
                     <div className="collection">
                         {
-                            employees.map((employee) => (
+                            props.employees.map((employee) => (
                                     <div id={employee.id} 
-                                        className={(employee.teamName === selectedTeam) ? "card m-2 standout" : "card m-2"} 
+                                        className={(employee.teamName === props.selectedTeam) ? "card m-2 standout" : "card m-2"} 
                                         style={{cursor: "pointer"}} 
-                                        onClick = {handleEmployeeClick}>
+                                        onClick = {props.handleEmployeeClick}>
                                         {
                                             (employee.gender === "male") ? 
                                                 <img src={maleProfile} className="card-img-top"/> : 
