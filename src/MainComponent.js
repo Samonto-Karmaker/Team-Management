@@ -39,7 +39,10 @@ const MainComponent = () => {
 
     return(
         <div>
-            <Header />
+            <Header 
+                selectedTeam = {selectedTeam}
+                memberCount = {employees.filter(employee => employee.teamName === selectedTeam).length}
+            />
             <BodyComponent 
                 employees = {employees}
                 selectedTeam = {selectedTeam}
