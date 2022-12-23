@@ -19,7 +19,8 @@ const Employee = props => {
                     <div className="collection">
                         {
                             props.employees.map((employee) => (
-                                    <div id={employee.id} 
+                                    <div key={employee.id}
+                                        id={employee.id} 
                                         className={(employee.teamName === props.selectedTeam) ? "card m-2 standout" : "card m-2"} 
                                         style={{cursor: "pointer"}} 
                                         onClick = {props.handleEmployeeClick}>
