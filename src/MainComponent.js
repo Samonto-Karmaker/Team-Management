@@ -4,6 +4,7 @@ import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import { useState, useEffect } from "react";
 import employee_data from "../src/Data/employeeData";
+import { BrowserRouter } from "react-router-dom";
 
 const MainComponent = () => {
 
@@ -46,7 +47,7 @@ const MainComponent = () => {
     }
 
     return(
-        <div>
+        <BrowserRouter>
             <Header 
                 selectedTeam = {selectedTeam}
                 memberCount = {employees.filter(employee => employee.teamName === selectedTeam).length}
@@ -58,7 +59,7 @@ const MainComponent = () => {
                 handleEmployeeClick = {handleEmployeeClick}
             />
             <Footer />
-        </div>
+        </BrowserRouter>
     )
 }
 

@@ -7,6 +7,10 @@
     box-shadow: rgba(44, 11, 194, 0.6) 0px 1px 4px, rgb(53, 9, 247) 0px 0px 0px 3px; 
 }
 
+.nav-background{
+    background-color: rgba(44, 11, 194, 0.6);
+}
+
 h1, h2, h3, h4, h5, h6, p{
     text-align: center;
 }
