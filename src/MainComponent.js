@@ -57,6 +57,7 @@ const MainComponent = () => {
                 selectedTeam = {selectedTeam}
                 handleSelectedTeamChange = {handleSelectedTeamChange}
                 handleEmployeeClick = {handleEmployeeClick}
+                setTeam = {setTeam}
             />
             <Footer />
         </BrowserRouter>

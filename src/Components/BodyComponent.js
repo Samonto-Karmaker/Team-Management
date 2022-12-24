@@ -22,7 +22,11 @@ const BodyComponent = props => {
                 <Route
                     path="/GroupedTeamMembers"
                     element={
-                        <GroupedTeamMembers />
+                        <GroupedTeamMembers 
+                            employees = {props.employees}
+                            selectedTeam = {props.selectedTeam}
+                            setTeam = {props.setTeam}
+                        />
                     }
                 ></Route>
                 <Route
